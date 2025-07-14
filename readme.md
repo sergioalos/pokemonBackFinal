@@ -128,6 +128,8 @@ Este proyecto está bajo la licencia ISC.
 **Contacto:**  
 Desarrollado por [Sergio].  
 Email: enderman838@gmail.com
+
+
 Usuarios ej
 "email": "root@pokeapi.com",
 "password": "rootpassword"

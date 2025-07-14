@@ -2,180 +2,177 @@
 
 PokéAPI es una API RESTful para gestionar equipos, Pokémon, combates y estadísticas en un entorno competitivo inspirado en el universo Pokémon. Este backend está desarrollado con Node.js, Express y Sequelize sobre MySQL.
 
-## Características principales
+---
 
-- **Autenticación JWT:** Registro y login de usuarios.
-- **Gestión de equipos:** Crear, editar, eliminar y consultar equipos de 4 Pokémon.
-- **Gestión de Pokémon:** CRUD completo para administradores.
-- **Asignación de tipos:** Relaciona Pokémon con sus tipos.
-- **Sistema de combates:** Inicia combates entre equipos, registra rondas y determina ganadores.
-- **Historial y estadísticas:** Consulta historial de combates y ranking global.
-- **Panel de administración:** Gestión avanzada de usuarios, equipos y combates (solo root).
-- **Cobertura de tests:** Tests automáticos con Jest y Supertest.
+## 🚀 Características Principales
 
-## Tecnologías
+- 🔐 **Autenticación JWT:** Registro y login de usuarios.
+- 👥 **Gestión de equipos:** Crear, editar, eliminar y consultar equipos de 4 Pokémon.
+- 🐱‍👓 **Gestión de Pokémon:** CRUD completo para administradores.
+- 🌈 **Asignación de tipos:** Relaciona Pokémon con sus tipos.
+- ⚔️ **Sistema de combates:** Inicia combates entre equipos, registra rondas y determina ganadores.
+- 📊 **Historial y estadísticas:** Consulta historial de combates y ranking global.
+- 🛡️ **Panel de administración:** Gestión avanzada de usuarios, equipos y combates (solo root).
+- 🧪 **Cobertura de tests:** Tests automáticos con Jest y Supertest.
 
-- Node.js
-- Express
-- Sequelize (ORM)
-- MySQL
-- JWT (autenticación)
-- Jest & Supertest (testing)
+---
 
-## Instalación
+## 🛠️ Tecnologías Utilizadas
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/sergioalos/pokemonBackFinal.git
-   cd pokeapi-backend
-   ```
+| Nombre         | Descripción                |
+| -------------- | ------------------------- |
+| Node.js        | Backend JavaScript        |
+| Express        | Framework API RESTful     |
+| Sequelize      | ORM para MySQL            |
+| MySQL          | Base de datos relacional  |
+| JWT            | Autenticación segura      |
+| Jest & Supertest | Testing automático      |
 
-2. **Instala dependencias:**
-   ```bash
-   npm install
-   ```
+---
 
-3. **Configura las variables de entorno:**
-   ```
-   Esto no se deberia de subir pero por ejemplo para emular unos datos de prueba serian asi para la evaluación evitamos conflictos para la revisión a futuro se borraran
+## ⚡ Instalación Rápida
 
-   DB_HOST=localhost
+```bash
+git clone https://github.com/sergioalos/pokemonBackFinal.git
+cd pokemonBackFinal
+npm install
+```
 
-   DB_PORT=3306
+---
 
-   DB_NAME=pokeapi
+### 1️⃣ Configuración de variables de entorno
 
-   DB_USER=root
+Crea un archivo `.env` en la raíz con estos valores de ejemplo:
 
-   DB_PASS=pokemon123
+```properties
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=pokeapi
+DB_USER=root
+DB_PASS=pokemon123
+JWT_SECRET=g2R@Z6y!uP04$XmAj1F*vm7cK2LwLQ93
+```
 
-   JWT_SECRET=g2R@Z6y!uP04$XmAj1F*vm7cK2LwLQ93
+---
 
-4. **Levantar la bbdd:**
+### 2️⃣ Base de datos MySQL
 
-1º
+- Instala MySQL Server y Workbench.
+- Crea la base de datos `pokeapi`.
+- Importa el dump desde: **SERVER → DATA IMPORT**.
+- Puerto por defecto: `3306`.
+- Usuario: `root`.
+- Contraseña de ejemplo: `pokemon123`.
 
-MySQL Server	Motor de base de datos local	https://dev.mysql.com/downloads/mysql/
+---
 
+### 3️⃣ Arranca el servidor
 
-MySQL Workbench	GUI para trabajar con BBDD	https://dev.mysql.com/downloads/workbench/
+```bash
+npm run dev
+```
 
+---
 
-2ºopcional pero necesario para el proyecto de back
+## 📚 Endpoints Principales
 
+<details>
+  <summary><b>Autenticación</b></summary>
 
-Node.js y npm	Para correr backend Express	https://nodejs.org
+  - `POST /auth/register` — Registro de usuario
+  - `POST /auth/login` — Login y obtención de token JWT
+</details>
 
-3º Instalar MySQL Community Server
+<details>
+  <summary><b>Equipos</b></summary>
 
-Elige Developer Default o Server Only.
+  - `POST /teams` — Crear equipo
+  - `GET /teams/my` — Ver equipos propios
+  - `PUT /teams/:id` — Editar equipo
+  - `DELETE /teams/:id` — Eliminar equipo
+</details>
 
-Guarda tu contraseña de root.
+<details>
+  <summary><b>Pokémon</b></summary>
 
-Puerto por defecto: 3306.
+  - `GET /pokemons` — Listar Pokémon
+  - `POST /pokemons` — Crear Pokémon (root)
+  - `PUT /pokemons/:id` — Editar Pokémon (root)
+  - `DELETE /pokemons/:id` — Eliminar Pokémon (root)
+</details>
 
-4º Instalar workbench
+<details>
+  <summary><b>Tipos y efectividad</b></summary>
 
-Conexión BBDD
+  - `GET /types` — Listar tipos
+  - `POST /effectiveness` — Crear relación de efectividad (root)
+</details>
 
-Hostname 127.0.0.1
+<details>
+  <summary><b>Combates</b></summary>
 
-port 3306
+  - `POST /battles` — Iniciar combate
+  - `POST /battles/:id/rounds` — Iniciar ronda
+  - `GET /battles/my-history` — Ver historial de combates
+</details>
 
-Conexion importante puerto 3306
+<details>
+  <summary><b>Estadísticas</b></summary>
 
-username root
+  - `GET /stats/ranking` — Ranking global
+  - `GET /stats/my-stats` — Estadísticas propias
+</details>
 
-password obligatoria y un ejemplo 
+<details>
+  <summary><b>Administración (solo root)</b></summary>
 
-pokemon123
+  - `GET /admin/users` — Listar usuarios
+  - `DELETE /admin/users/:id` — Eliminar usuario
+  - `GET /admin/teams` — Listar todos los equipos
+  - `GET /admin/battles` — Listar todos los combates
+</details>
 
-5º Lo primero es decargarnos el bbddDUMP
+---
 
-ahora creamos la tabla pokeapi y le damos a SERVER -> DATA IMPORT ahi seleccionamos el dump y le damos a start import y se nos importará toda la BBDD
+## 🧪 Testing
 
-5. **Arranca el servidor en desarrollo:**
-   ```bash
-   npm run dev
-   ```
+Ejecuta los tests automáticos con cobertura:
 
-## Endpoints principales
-
-### Autenticación
-
-- `POST /auth/register` — Registro de usuario
-- `POST /auth/login` — Login y obtención de token JWT
-
-### Equipos
-
-- `POST /teams` — Crear equipo
-- `GET /teams/my` — Ver equipos propios
-- `PUT /teams/:id` — Editar equipo
-- `DELETE /teams/:id` — Eliminar equipo
-
-### Pokémon
-
-- `GET /pokemons` — Listar Pokémon
-- `POST /pokemons` — Crear Pokémon (root)
-- `PUT /pokemons/:id` — Editar Pokémon (root)
-- `DELETE /pokemons/:id` — Eliminar Pokémon (root)
-
-### Tipos y efectividad
-
-- `GET /types` — Listar tipos
-- `POST /effectiveness` — Crear relación de efectividad (root)
-
-### Combates
-
-- `POST /battles` — Iniciar combate
-- `POST /battles/:id/rounds` — Iniciar ronda
-- `GET /battles/my-history` — Ver historial de combates
-
-### Estadísticas
-
-- `GET /stats/ranking` — Ranking global
-- `GET /stats/my-stats` — Estadísticas propias
-
-### Administración (solo root)
-
-- `GET /admin/users` — Listar usuarios
-- `DELETE /admin/users/:id` — Eliminar usuario
-- `GET /admin/teams` — Listar todos los equipos
-- `GET /admin/battles` — Listar todos los combates
-
-## Testing
-
-Ejecuta los tests con cobertura:
 ```bash
 npm test
 ```
 
-## Estructura del proyecto
+---
+
+## 🗂️ Estructura del Proyecto
 
 ```
 src/
-  app.js
-  routes/
-  models/
-  middleware/
-  utils/
-  config/
-  ...
+ ├── app.js
+ ├── routes/
+ ├── models/
+ ├── middleware/
+ ├── utils/
+ ├── config/
+ └── ...
 ```
 
+---
 
+## 👤 Contacto
 
+Desarrollado por: **Sergio**  
+📧 Email: enderman838@gmail.com
 
+---
 
-**Contacto:**  
-Desarrollado por [Sergio].  
-Email: enderman838@gmail.com
+## 🗝️ Usuarios de ejemplo
 
+```json
+{
+  "email": "root@pokeapi.com",
+  "password": "rootpassword"
+}
+```
 
-**Usuarios Aplicación**
-
-Ejemplo de usuario root
-
-"email": "root@pokeapi.com",
-
-"password": "rootpassword"
+---

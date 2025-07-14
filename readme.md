@@ -46,11 +46,17 @@ PokéAPI es una API RESTful para gestionar equipos, Pokémon, combates y estadí
    JWT_SECRET=tu_secreto_jwt
    ```
    Esto no se deberia de subir pero por ejemplo para emular unos datos de prueba serian asi para la evaluación evitamos conflictos para la revisión a futuro se borraran
+
    DB_HOST=localhost
+
    DB_PORT=3306
+
    DB_NAME=pokeapi
+
    DB_USER=root
+
    DB_PASS=pokemon123
+
    JWT_SECRET=g2R@Z6y!uP04$XmAj1F*vm7cK2LwLQ93
 
 4. **Levantar la bbdd:**

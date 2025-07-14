@@ -54,26 +54,47 @@ PokéAPI es una API RESTful para gestionar equipos, Pokémon, combates y estadí
    JWT_SECRET=g2R@Z6y!uP04$XmAj1F*vm7cK2LwLQ93
 
 4. **Levantar la bbdd:**
+
 1º
+
 MySQL Server	Motor de base de datos local	https://dev.mysql.com/downloads/mysql/
+
+
 MySQL Workbench	GUI para trabajar con BBDD	https://dev.mysql.com/downloads/workbench/
+
+
 2ºopcional pero necesario para el proyecto de back
+
+
 Node.js y npm	Para correr backend Express	https://nodejs.org
 
 3º Instalar MySQL Community Server
+
 Elige Developer Default o Server Only.
+
 Guarda tu contraseña de root.
+
 Puerto por defecto: 3306.
+
 4º Instalar workbench
+
 Conexión BBDD
+
 Hostname 127.0.0.1
+
 port 3306
+
 Conexion importante puerto 3306
+
 username root
+
 password obligatoria y un ejemplo 
+
 pokemon123
 
-5º Lo primero es decargarnos el bbddDUMP ahora creamos la tabla pokeapi y le damos a SERVER -> DATA IMPORT ahi seleccionamos el dump y le damos a start import y se nos importará toda la BBDD
+5º Lo primero es decargarnos el bbddDUMP
+
+ahora creamos la tabla pokeapi y le damos a SERVER -> DATA IMPORT ahi seleccionamos el dump y le damos a start import y se nos importará toda la BBDD
 
 5. **Arranca el servidor en desarrollo:**
    ```bash

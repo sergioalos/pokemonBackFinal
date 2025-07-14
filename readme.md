@@ -124,6 +124,6 @@ Desarrollado por [Sergio].
 Email: enderman838@gmail.com
 
 
-Usuarios ej
+**Usuarios Aplicación**
 "email": "root@pokeapi.com",
 "password": "rootpassword"

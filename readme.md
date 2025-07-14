@@ -26,7 +26,7 @@ PokéAPI es una API RESTful para gestionar equipos, Pokémon, combates y estadí
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/pokeapi-backend.git
+   git clone https://github.com/sergioalos/pokemonBackFinal.git
    cd pokeapi-backend
    ```
 

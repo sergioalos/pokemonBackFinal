@@ -115,15 +115,9 @@ src/
   ...
 ```
 
-## Contribución
 
-Las contribuciones son bienvenidas. Por favor, abre un issue o pull request para sugerencias o mejoras.
 
-## Licencia
 
-Este proyecto está bajo la licencia ISC.
-
----
 
 **Contacto:**  
 Desarrollado por [Sergio].  

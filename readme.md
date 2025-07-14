@@ -173,5 +173,9 @@ Email: enderman838@gmail.com
 
 
 **Usuarios Aplicación**
+
+Ejemplo de usuario root
+
 "email": "root@pokeapi.com",
+
 "password": "rootpassword"

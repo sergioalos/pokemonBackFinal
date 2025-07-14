@@ -36,14 +36,6 @@ PokéAPI es una API RESTful para gestionar equipos, Pokémon, combates y estadí
    ```
 
 3. **Configura las variables de entorno:**
-   Crea un archivo `.env` en la raíz con el siguiente contenido:
-   ```
-   DB_NAME=tu_base_de_datos
-   DB_USER=tu_usuario
-   DB_PASS=tu_contraseña
-   DB_HOST=localhost
-   DB_PORT=3306
-   JWT_SECRET=tu_secreto_jwt
    ```
    Esto no se deberia de subir pero por ejemplo para emular unos datos de prueba serian asi para la evaluación evitamos conflictos para la revisión a futuro se borraran
 
